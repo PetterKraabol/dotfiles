@@ -15,6 +15,12 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
+  f_bash_profile:
+    dst: ~/.bash_profile
+    src: bash_profile
+  f_bashrc:
+    dst: ~/.bashrc
+    src: bashrc
   f_compton.conf:
     dst: ~/.config/compton.conf
     src: config/compton.conf
@@ -41,8 +47,8 @@ dotfiles:
     src: config/termite/config
   f_vimrc:
     actions:
-      - vim-plug-install
-      - vim-plug
+    - vim-plug-install
+    - vim-plug
     dst: ~/.vimrc
     src: vimrc
   f_xbindkeysrc:
@@ -69,3 +75,5 @@ profiles:
     - f_list.rasi
     - f_compton.conf
     - f_termite_config
+    - f_bashrc
+    - f_bash_profile
