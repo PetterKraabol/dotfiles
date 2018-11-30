@@ -1,0 +1,285 @@
+##### GENERAL ##################################### 
+
+# Mod key
+set $mod Mod4
+
+# Window focus
+focus_follows_mouse no
+
+# Font
+font pango:Hasklug Nerd Font Mono 8
+
+# Application variables
+set $browser    google-chrome-beta
+set $music      spotify
+set $term       termite
+set $explorer   thunar
+set $scripts    ~/scripts
+
+# RESIZE VARIABLES
+# move absolute position center
+set $video floating toggle; resize set 1280 720px;
+
+# FLOATING
+floating_modifier $mod
+
+# Window border
+for_window [class="^.*"] border pixel 0
+for_window [title="^.*"] border pixel 0
+
+# Gap variables
+set $inner 32
+set $outer 16
+
+# Set gaps
+gaps inner $inner
+gaps outer $outer
+
+# Toggle gaps
+bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $outer
+bindsym $mod+Ctrl+g exec pkill compton; gaps inner all set 0; gaps outer all set 0
+
+# Terminal
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec urxvt -name floating
+bindsym $mod+Shift+Ctrl+Return exec xterm -class blank
+
+# Kill application
+bindsym $mod+q kill
+
+# Reload i3
+bindsym $mod+Ctrl+c reload
+
+# Restart i3
+bindsym $mod+Ctrl+r restart
+
+##### MOVEMENT ####################################
+
+# Focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move
+bindsym $mod+Ctrl+h move left
+bindsym $mod+Ctrl+j move down
+bindsym $mod+Ctrl+k move up
+bindsym $mod+Ctrl+l move right
+
+bindsym $mod+Ctrl+Left move left
+bindsym $mod+Ctrl+Down move down
+bindsym $mod+Ctrl+Up move up
+bindsym $mod+Ctrl+Right move right
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# Resize
+bindsym $mod+Shift+h     resize shrink width  10px or 10 ppt
+bindsym $mod+Shift+j     resize shrink height 10px or 10 ppt
+bindsym $mod+Shift+k     resize grow height   10px or 10 ppt
+bindsym $mod+Shift+l     resize grow width    10px or 10 ppt
+
+bindsym $mod+Shift+Left  resize shrink width  10px or 10 ppt
+bindsym $mod+Shift+Down  resize shrink height 10px or 10 ppt
+bindsym $mod+Shift+Up    resize grow height   10px or 10 ppt
+bindsym $mod+Shift+Right resize grow width    10px or 10 ppt
+
+bindsym $mod+Shift+Ctrl+h     resize shrink width  1px or 1 ppt
+bindsym $mod+Shift+Ctrl+j     resize shrink height 1px or 1 ppt
+bindsym $mod+Shift+Ctrl+k     resize grow height   1px or 1 ppt
+bindsym $mod+Shift+Ctrl+l     resize grow width    1px or 1 ppt
+
+bindsym $mod+Shift+Ctrl+Left  resize shrink width  1px or 1 ppt
+bindsym $mod+Shift+Ctrl+Down  resize shrink height 1px or 1 ppt
+bindsym $mod+Shift+Ctrl+Up    resize grow height   1px or 1 ppt
+bindsym $mod+Shift+Ctrl+Right resize grow width    1px or 1 ppt
+
+# VERTICAL SPLIT
+bindsym $mod+v split v
+
+# HORIZONTAL SPLIT
+bindsym $mod+Shift+v split h
+
+# FULLSCREEN
+bindsym $mod+f fullscreen toggle
+
+# PAPER MODE
+bindsym $mod+space floating toggle; resize set 426px 670px;
+
+# VIDEO MODE
+bindsym $mod+Ctrl+Shift+space $video
+
+# TOGGLE FLOATING
+bindsym $mod+Ctrl+space floating toggle
+
+# MODE TOGGLE
+bindsym $mod+Shift+space focus mode_toggle
+
+# CENTER FLOATING
+bindsym $mod+c move absolute position center
+
+##### WORKSPACES ##################################
+
+# WORKSPACES
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9 Discord"
+set $ws10 "10  Spotify"
+
+# LAST WORKSPACE
+bindsym $mod+b workspace back_and_forth
+
+# SWITCH TO WORKSPACE
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# MOVE WINDOW TO WORKSPACE
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+bindsym $mod+Ctrl+0 move container to workspace $ws10
+
+bindsym $mod+Mod2+KP_1 workspace $ws1
+bindsym $mod+Mod2+KP_2 workspace $ws2
+bindsym $mod+Mod2+KP_3 workspace $ws3
+bindsym $mod+Mod2+KP_4 workspace $ws4
+bindsym $mod+Mod2+KP_5 workspace $ws5
+bindsym $mod+Mod2+KP_6 workspace $ws6
+bindsym $mod+Mod2+KP_7 workspace $ws7
+bindsym $mod+Mod2+KP_8 workspace $ws8
+bindsym $mod+Mod2+KP_9 workspace $ws9
+bindsym $mod+Mod2+KP_0 workspace $ws10
+
+bindsym $mod+Ctrl+Mod2+KP_1 move container to workspace $ws1
+bindsym $mod+Ctrl+Mod2+KP_2 move container to workspace $ws2
+bindsym $mod+Ctrl+Mod2+KP_3 move container to workspace $ws3
+bindsym $mod+Ctrl+Mod2+KP_4 move container to workspace $ws4
+bindsym $mod+Ctrl+Mod2+KP_5 move container to workspace $ws5
+bindsym $mod+Ctrl+Mod2+KP_6 move container to workspace $ws6
+bindsym $mod+Ctrl+Mod2+KP_7 move container to workspace $ws7
+bindsym $mod+Ctrl+Mod2+KP_8 move container to workspace $ws8
+bindsym $mod+Ctrl+Mod2+KP_9 move container to workspace $ws9
+bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
+
+##### TOOLS ########################################
+
+# Lock
+bindsym $mod+Escape exec ~/scripts/lock.sh
+
+# SCREENSHOT
+set $folder ~/pictures/screenshots/
+set $date %Y/%m/%d-%T.png
+bindsym --release $mod+Print exec $scripts/screeny-select.sh
+bindsym --release $mod+Ctrl+Print exec $scripts/screeny.sh
+
+# CAST
+bindsym --release $mod+Shift+Print exec $scripts/cast.sh 
+bindsym --release $mod+Ctrl+Shift+Print exec $scripts/cast.sh -s 
+bindsym $mod+F12 exec pkill ffmpeg
+
+# MEDIA CONTROLS
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+bindsym XF86AudioMute  exec amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
+
+# ROFI
+bindsym $mod+Tab exec rofi -show window -show-icons -theme list
+bindsym $mod+d exec rofi -show drun -show-icons -theme list
+
+# WALLPAPER
+set $wallpaper ~/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale $wallpaper
+
+
+##### APP RULES ###################################
+
+for_window [instance="floating"] floating enable
+for_window [class="(?i)thunar"] floating enable
+for_window [instance="youtube.com"] floating enable; $video
+for_window [instance="twitch.tv"] floating enable; set resize 1270px 562px
+
+# IntelliJ unfocus fix for ctrl+alt+number
+for_window [class="jetbrains-idea"] focus
+
+# Default locations
+for_window [class="discord"] move to workspace $ws9
+for_window [class="Spotify"] move to workspace $ws10
+
+
+##### APP BINDS ###################################
+
+set $app google-chrome-beta
+
+bindsym $mod+n       exec $scripts/direct.sh
+bindsym $mod+Ctrl+n  exec $scripts/search.sh 
+bindsym $mod+Shift+n exec $scripts/bookmarks.sh 
+
+
+bindsym $mod+m       exec $music
+
+bindsym $mod+e       exec $explorer
+
+# Websites
+bindsym $mod+Ctrl+t exec $browser https://twitch.tv
+bindsym $mod+Ctrl+u exec $browser https://mail.google.com
+
+
+##### BAR
+set $bg-color 	         #1C1E25
+set $inactive-bg-color   #1C1E25
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+bar {
+	wheel_up_cmd nop
+	wheel_down_cmd nop
+	position bottom
+	status_command i3status --config ~/.config/i3/i3status.conf
+	colors {
+		background $bg-color
+	    	separator #545454
+		#                  border             background         text
+		focused_workspace  $bg-color          $bg-color          $text-color
+		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+	}
+}
+
+##### LAUNCH ###################################### 
+
+# RELOAD
+exec_always --no-startup-id compton
