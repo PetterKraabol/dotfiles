@@ -18,7 +18,7 @@ scrollback_lines = 10000
 hyperlinks = true
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
-browser = google-chrome-beta
+browser = google-chrome-stable
 
 # "system", "on" or "off"
 #cursor_blink = system
@@ -46,13 +46,13 @@ scrollbar = off
 
 foreground = #DEDEDE
 foreground_bold = #ffffff
-background = #1C1E25
+background = rgba(2, 13, 29, 0.95)
 
 # 20% background transparency (requires a compositor)
 #background = rgba(28, 28, 28, 1)
 
 # If unset, will reverse foreground and background
-highlight = #2f2f2f
+highlight = rgba(6, 29, 63, 1)
 
 # Colors from color0 to color254 can be set
 color0 = #2E3436
@@ -60,7 +60,8 @@ color1 = #CC0000
 color2 = #4E9A06
 color3 = #C4A000
 color4 = #3465A4
-color5 = #75507B
+color5 = #C121DC
+#color5 = #75507B
 color6 = #06989A
 color7 = #D3D7CF
 color8 = #555753

@@ -10,9 +10,10 @@ focus_follows_mouse no
 font pango:Hasklug Nerd Font Mono 8
 
 # Application variables
-set $browser    google-chrome-beta
+set $browser    google-chrome-stable
 set $music      spotify
-set $term       termite
+#set $term       termite
+set $term       alacritty
 set $explorer   thunar
 set $scripts    ~/scripts
 
@@ -137,8 +138,11 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9 Discord"
+set $ws9 "9  Discord"
 set $ws10 "10  Spotify"
+
+# Move workspace between monitors
+bindsym $mod+Shift+b move workspace to output right
 
 # LAST WORKSPACE
 bindsym $mod+b workspace back_and_forth
@@ -197,8 +201,9 @@ bindsym $mod+Escape exec ~/scripts/lock.sh
 # SCREENSHOT
 set $folder ~/pictures/screenshots/
 set $date %Y/%m/%d-%T.png
-bindsym --release $mod+Print exec $scripts/screeny-select.sh
+#bindsym --release $mod+Print exec $scripts/screeny-select.sh
 bindsym --release $mod+Ctrl+Print exec $scripts/screeny.sh
+bindsym --release $mod+Print exec ~/git/imgur-screenshot/imgur-screenshot.sh
 
 # CAST
 bindsym --release $mod+Shift+Print exec $scripts/cast.sh 
@@ -212,15 +217,15 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 bindsym XF86AudioMute  exec amixer set Master toggle
-bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
-bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
+bindsym XF86AudioRaiseVolume exec amixer sset Master 1%+
+bindsym XF86AudioLowerVolume exec amixer sset Master 1%-
 
 # ROFI
 bindsym $mod+Tab exec rofi -show window -show-icons -theme list
 bindsym $mod+d exec rofi -show drun -show-icons -theme list
 
 # WALLPAPER
-set $wallpaper ~/Pictures/wallpaper.jpg
+set $wallpaper ~/Pictures/wallpaper.png
 exec_always --no-startup-id feh --bg-scale $wallpaper
 
 
@@ -228,8 +233,10 @@ exec_always --no-startup-id feh --bg-scale $wallpaper
 
 for_window [instance="floating"] floating enable
 for_window [class="(?i)thunar"] floating enable
+for_window [class="(?i)pavucontrol"] floating enable
 for_window [instance="youtube.com"] floating enable; $video
 for_window [instance="twitch.tv"] floating enable; set resize 1270px 562px
+for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down -22 px
 
 # IntelliJ unfocus fix for ctrl+alt+number
 for_window [class="jetbrains-idea"] focus
@@ -241,7 +248,7 @@ for_window [class="Spotify"] move to workspace $ws10
 
 ##### APP BINDS ###################################
 
-set $app google-chrome-beta
+set $app google-chrome-stable
 
 bindsym $mod+n       exec $scripts/direct.sh
 bindsym $mod+Ctrl+n  exec $scripts/search.sh 
@@ -258,22 +265,23 @@ bindsym $mod+Ctrl+u exec $browser https://mail.google.com
 
 
 ##### BAR
-set $bg-color 	         #1C1E25
-set $inactive-bg-color   #1C1E25
+set $bg-color 	         #051F35
+set $inactive-bg-color   #051F35
 set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $inactive-text-color #828997
+set $urgent-bg-color     #9F62F2
 
 bar {
 	wheel_up_cmd nop
 	wheel_down_cmd nop
 	position bottom
-	status_command i3status --config ~/.config/i3/i3status.conf
+	status_command py3status -c ~/.config/i3/i3status.conf
 	colors {
 		background $bg-color
-	    	separator #545454
+	   	separator #545454
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
+		active_workspace   $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
@@ -281,5 +289,8 @@ bar {
 
 ##### LAUNCH ###################################### 
 
-# RELOAD
+# Startup
+#exec --no-startup-id tint2
+
+# Reload
 exec_always --no-startup-id compton

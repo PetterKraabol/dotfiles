@@ -15,6 +15,9 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
+  f_alacritty.yml:
+    dst: ~/.config/alacritty/alacritty.yml
+    src: config/alacritty/alacritty.yml
   f_bash_profile:
     dst: ~/.bash_profile
     src: bash_profile
@@ -39,6 +42,9 @@ dotfiles:
   f_i3status.conf:
     dst: ~/.config/i3/i3status.conf
     src: config/i3/i3status.conf
+  f_init.vim:
+    dst: ~/.config/nvim/init.vim
+    src: config/nvim/init.vim
   f_list.rasi:
     dst: ~/.config/rofi/list.rasi
     src: config/rofi/list.rasi
@@ -77,3 +83,5 @@ profiles:
     - f_termite_config
     - f_bashrc
     - f_bash_profile
+    - f_alacritty.yml
+    - f_init.vim

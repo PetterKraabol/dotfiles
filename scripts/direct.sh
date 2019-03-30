@@ -3,4 +3,4 @@
 # Rofi => Browser
 
 rofi -dmenu -theme entry | \
-    xargs -I{} google-chrome-beta {}
+    xargs -I{} google-chrome-stable {}

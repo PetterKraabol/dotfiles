@@ -50,8 +50,11 @@ xbindkeys
 numlockx &
 
 # 1440p 165Hz
-xrandr --output DP-2 --mode 2560x1440 --rate 165
+xrandr --output DP-2 --mode 2560x1440 --rate 165 --pos 0x0 --primary --output HDMI-0 --auto --pos 2560x480
 
-# GUI
-exec i3
+# Mount unencrypted drives
+mount.sh
+
+# Desktop Environment
+#exec i3
 #exec startkde

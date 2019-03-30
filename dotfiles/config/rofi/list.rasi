@@ -1,18 +1,15 @@
+configuration {
+	modi: "window,run,ssh";
+	window-format: "{n}";
+}
+
 * {
 
 	background-color:      #1b1d1e00;
 	border-color:          #000;
 	text-color:            #D8EBF4;
 	font:                  "Hasklug Nerd Font Bold 9";
-
 }
-
-
-configuration {
-	modi: "window,run,ssh";
-	window-format: "{n}";
-}
-
 
 #window {
 	anchor:     north;

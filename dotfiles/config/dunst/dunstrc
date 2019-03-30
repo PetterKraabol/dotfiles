@@ -15,7 +15,7 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = mouse
+    follow = keyboard
 
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
@@ -237,7 +237,7 @@
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    #history = mod4+n
+    #history = mod4+shift+n
 
     # Context menu.
     context = ctrl+shift+period
@@ -326,7 +326,9 @@
 # vim: ft=cfg
 [spotify]
     appname = Spotify
-    background = "#191414"
+    background = "#0AA03F"
+	foreground = "#ffffff"	
+	corner_radius = 6
 
 [screenshot]
     summary = screenshot

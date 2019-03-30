@@ -38,36 +38,38 @@
 #keystate_scrolllock= enable
 
 # Opening bracket
-"xvkbd -xsendevent -text "[""
+"xvkbd -xsendevent -text '['"
   Control+Alt+Mod2 + 8 | m:0x1c + c:17
 
 # Cosing bracket
-"xvkbd -xsendevent -text "]""
+"xvkbd -xsendevent -text ']'"
   Control+Alt+Mod2 + 9 | m:0x1c + c:18
 
 # Opening curly bracket
-"xvkbd -xsendevent -text "{""
+"xvkbd -xsendevent -text '{'"
   Control+Alt+Mod2 + 7 | m:0x1c + c:16
 
 # Cloding curly bracket
-"xvkbd -xsendevent -text "}""
+"xvkbd -xsendevent -text '}'"
   Control+Alt+Mod2 + 0 | m:0x1c + c:19
 
 # @
-"xvkbd -xsendevent -text "@""
+"xvkbd -xsendevent -text '@'"
   Control+Alt+Mod2 + 2 | m:0x1c + c:11
 
 # Tilde ~
-"xvkdb -xsendevent -text "̃~""
-  Control+Alt+Mod2 + dead_diaeresis | m:0x1c + c:118 
+"xvkdb -xsendevent -text '~'"
+  Alt+Mod2 + Alt_L | m:0x18 + c:64
+
 
 # Brtish pound
-#"xvkbd -xsendevent -text "£""
-#  Control+Alt+Mod2 + 3 | m:0x1c + c:12
+"xvkbd -xsendevent -text '£'"
+  Control+Alt+Mod2 + 3 | m:0x1c + c:12
+   
 
 # Dollar sign
-#"xvkbd -xsendevent -text "$""
-#  Control+Alt+Mod2 + 4 | m:0x1c + c:13
+"xvkbd -xsendevent -text '$'"
+  Control+Alt+Mod2 + 4 | m:0x1c + c:13
 
 
 ##################################
