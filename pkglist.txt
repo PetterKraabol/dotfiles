@@ -83,7 +83,6 @@ jfsutils
 keepass
 keepassxc
 keychain
-kitty
 less
 lib32-curl
 lib32-gtk2
