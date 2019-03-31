@@ -63,6 +63,9 @@ dotfiles:
   f_xinitrc:
     dst: ~/.xinitrc
     src: xinitrc
+  f_xprofile:
+    dst: ~/.xprofile
+    src: xprofile
   f_zprofile:
     dst: ~/.zprofile
     src: zprofile
@@ -85,3 +88,4 @@ profiles:
     - f_bash_profile
     - f_alacritty.yml
     - f_init.vim
+    - f_xprofile

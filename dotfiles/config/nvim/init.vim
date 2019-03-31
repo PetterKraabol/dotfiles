@@ -1,12 +1,12 @@
-" ~/.vimrc
+" ~/.config/nvim/init.vim
 
 "set mouse=a			" Mouse clicks
 set tabstop=4		" Tab visual size
 set softtabstop=4	" Number of spaces in tab when editing
 set encoding=UTF-8
 
-"set termguicolors
 set t_Co=256
+
 
 set number			" Line number
 "set showcmd			" Show last command
@@ -99,6 +99,8 @@ Plug 'lervag/vimtex'			" https://github.com/lervag/vimtex
 Plug 'ervandew/supertab'		" https://github.com/ervandew/supertab
 Plug 'Valloric/YouCompleteMe'	" https://github.com/Valloric/YouCompleteMe
 Plug 'SirVer/ultisnips'			" https://github.com/SirVer/ultisnips
+Plug 'christoomey/vim-tmux-navigator' " https://github.com/christoomey/vim-tmux-navigator
+Plug 'sjl/gundo.vim'	   		" https://github.com/sjl/gundo.vim
 
 call plug#end()
 
@@ -123,3 +125,14 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" tmux
+let g:tmux_navigator_save_on_switch = 2
+
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
+
+" Python3
+if has('python3')
+    let g:gundo_prefer_python3 = 1          " anything else breaks on Ubuntu 16.04+
+endif
